@@ -1,0 +1,23 @@
+:root {
+    --font-family: 'Ubuntu', sans-serif;
+    --box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
+}
+
+body {
+    font-family: var(--font-family);
+}
+
+hr {
+    background-color: rgba(0, 0, 0, 0.1);
+    height: 1px;
+    border: none;
+    margin: 0 1rem;
+}
+
+textarea::-webkit-input-placeholder {
+    font-family: var(--font-family);
+}
+
+textarea {
+    font-family: var(--font-family);
+}
