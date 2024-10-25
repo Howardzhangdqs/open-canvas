@@ -48,7 +48,7 @@ const data = computed(() => {
     gap: 0.5rem;
     align-items: center;
     border-radius: 3rem;
-    padding: 0 .8rem;
+    padding: 0 .8rem 0 .9rem;
     transition: all 0.3s;
     user-select: none;
 }

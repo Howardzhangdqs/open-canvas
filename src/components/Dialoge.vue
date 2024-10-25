@@ -4,16 +4,16 @@
             <textarea :placeholder="i18n.t('ui.dialoge.placeholder')" rows="1" v-model="model" ref="input" class="textarea" @change="auto_resize"></textarea>
         </div>
 
-        <div class="button" @click="console.log('send')">
-            <Icon icon="mingcute:send-line" style="width: 1.2rem; height: 1.2rem;"></Icon>
-        </div>
+        <TinyButton />
     </div>
 </template>
 
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
-import { ref, watch } from "vue";
+import { onMounted, ref, watch } from "vue";
 import { useI18n } from "vue-i18n";
+
+import TinyButton from "./TinyButton.vue";
 
 const i18n = useI18n();
 
@@ -27,9 +27,9 @@ const auto_resize = () => {
     input.value!.style.height = input.value!.scrollHeight + "px";
 };
 
-watch(model, () => {
-    auto_resize();
-});
+watch(model, auto_resize);
+
+onMounted(auto_resize);
 </script>
 
 <style scoped>
@@ -85,26 +85,4 @@ watch(model, () => {
     outline: none;
 }
 
-.button {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.01);
-    cursor: pointer;
-    transition: all 0.3s;
-    border: solid 1px rgba(0, 0, 0, 0);
-}
-
-.button:hover {
-    background-color: rgba(0, 0, 0, 0.03);
-    border: solid 1px rgba(0, 0, 0, 0.1);
-}
-
-.button:active {
-    background-color: rgba(0, 0, 0, 0.08);
-    border: solid 1px rgba(0, 0, 0, 0.2);
-}
 </style>

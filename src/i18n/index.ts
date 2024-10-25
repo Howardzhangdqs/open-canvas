@@ -11,7 +11,13 @@ export const en = {
         },
         dialoge: {
             placeholder: "Your prompt here ...",
-        }
+        },
+        card: {
+            suggest: "Suggestion",
+        },
+        editor: {
+            placeholder: "Start writing here...",
+        },
     }
 };
 
@@ -30,6 +36,12 @@ export const zh: I18nType = {
         },
         dialoge: {
             placeholder: "请输入您的提示词…",
-        }
+        },
+        card: {
+            suggest: "修改建议",
+        },
+        editor: {
+            placeholder: "从这里开始写作...",
+        },
     }
 };

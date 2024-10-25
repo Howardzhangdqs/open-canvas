@@ -1,6 +1,10 @@
+@import url("./markdown.css");
+
 :root {
     --font-family: 'Ubuntu', sans-serif;
-    --box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
+    --box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    --box-shadow-hover: 0 0 10px rgba(0, 0, 0, 0.4);
+    --border-radius: 1.2rem;
 }
 
 body {
@@ -20,4 +24,54 @@ textarea::-webkit-input-placeholder {
 
 textarea {
     font-family: var(--font-family);
+}
+
+.vditor {
+    font-family: var(--font-family) !important;
+    border-radius: var(--border-radius);
+    border: none !important;
+}
+
+.vditor-reset {
+    font-family: var(--font-family) !important;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: all .3s;
+    min-height: 10rem;
+}
+
+.vditor-reset:focus {
+    box-shadow: var(--box-shadow-hover);
+}
+
+.vditor-reset:hover {
+    box-shadow: var(--box-shadow-hover);
+}
+
+.vditor-toolbar {
+    display: none;
+}
+
+.vditor-ir {
+    transition: all 0.3s;
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        width: 768px;
+    }
+
+    :root {
+        --width: 768px;
+    }
+}
+
+@media screen and (min-width: 1068px) {
+    .container {
+        width: 1068px;
+    }
+
+    :root {
+        --width: 1068px;
+    }
 }
